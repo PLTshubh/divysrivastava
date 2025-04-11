@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Deals | Hire Divy</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f0faff, #d7f3f6);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .polygon-background {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .polygon {
+            position: absolute;
+            fill: rgba(0, 183, 255, 0.12);
+            stroke: #00bfff;
+            stroke-width: 1;
+            filter: drop-shadow(0 0 6px #00bfff);
+            animation: floatPolygon linear infinite;
+        }
+
+        @keyframes floatPolygon {
+            0% {
+                transform: translateY(120vh) scale(0.6) rotate(0deg);
+                opacity: 0.2;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateY(-120vh) scale(1.2) rotate(360deg);
+                opacity: 0.2;
+            }
+        }
+
+        .navbar {
+            z-index: 2;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .main-heading {
+            margin-top: 120px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .highlight-text {
+            color: #00bcd4;
+            font-weight: 700;
+        }
+
+        .animated-divider {
+            width: 60px;
+            height: 4px;
+            background: #00bcd4;
+            margin: 16px auto 40px;
+            border-radius: 10px;
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scaleX(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scaleX(1.3);
+                opacity: 0.5;
+            }
+        }
+
+        .deal-card {
+            backdrop-filter: blur(14px);
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 1.75rem;
+            padding: 2.2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .deal-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-glow {
+            background-color: #00bcd4;
+            color: #fff;
+            padding: 0.75rem 1.6rem;
+            font-weight: bold;
+            border-radius: 50px;
+            border: none;
+            box-shadow: 0 0 15px #00bcd4aa;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-glow:hover {
+            background-color: #0097a7;
+            box-shadow: 0 0 25px #00bcd4;
+        }
+
+        .popup {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #00bcd4;
+            color: #fff;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
+            animation: fadeInOut 7s ease-in-out forwards;
+            z-index: 9999;
+            font-weight: 600;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+
+            10%,
+            90% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+        }
+
+        footer {
+            z-index: 2;
+        }
+
+        footer h5 {
+            font-weight: 600;
+        }
+
+        footer a {
+            text-decoration: none;
+        }
+
+        footer small {
+            color: #777;
+        }
+
+        .bd-footer a {
+            color: #000 !important;
+        }
+
+        .bd-footer a:hover {
+            text-decoration: underline;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark fixed-top px-4">
+        <a class="navbar-brand" href="#">How To Hire Me</a>
+    </nav>
+
+    <svg class="polygon-background">
+        <polygon class="polygon" points="25,0 50,50 0,50" style="left: 5%; top: 90%; animation-duration: 24s;">
+        </polygon>
+        <polygon class="polygon" points="30,0 60,30 30,60 0,30" style="left: 20%; top: 85%; animation-duration: 18s;">
+        </polygon>
+        <polygon class="polygon" points="25,0 50,25 25,50 0,25" style="left: 40%; top: 80%; animation-duration: 30s;">
+        </polygon>
+        <polygon class="polygon" points="20,0 40,20 20,40 0,20" style="left: 60%; top: 88%; animation-duration: 22s;">
+        </polygon>
+        <polygon class="polygon" points="35,0 70,35 35,70 0,35" style="left: 75%; top: 92%; animation-duration: 27s;">
+        </polygon>
+        <polygon class="polygon" points="35,0 70,35 35,70 0,35" style="left: 50%; top: 95%; animation-duration: 32s;">
+        </polygon>
+        <polygon class="polygon" points="20,0 40,20 20,40 0,20" style="left: 33%; top: 98%; animation-duration: 26s;">
+        </polygon>
+        <polygon class="polygon" points="25,0 50,25 25,50 0,25" style="left: 10%; top: 99%; animation-duration: 35s;">
+        </polygon>
+    </svg>
+
+    <div class="container py-5">
+        <h1 class="main-heading">Work With <span class="highlight-text">Me</span></h1>
+        <div class="animated-divider"></div>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-5">
+                <div class="deal-card">
+                    <h2 class="highlight-text">Hire via Fiverr</h2>
+                    <p class="my-3">Trusted third-party platform. <strong>Secured payments</strong> and guaranteed
+                        delivery.</p>
+                    <a href="https://www.fiverr.com/divysrivasta887/buying?source=avatar_menu_profile" target="_blank"
+                        class="btn btn-glow">Go to Fiverr</a>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="deal-card">
+                    <h2 class="highlight-text">Hire Me Directly</h2>
+                    <p class="my-3"><strong>no commission, faster process,</strong> direct communication and quick
+                        results with <strong>Secured payments</strong> and guaranteed delivery.</p>
+                    <a href="mailto:divysrivastava719@gmail.com" class="btn btn-glow"
+                        onclick="setTimeout(() => window.location.href='deals.html?emailed=true', 2000)">Contact
+                        Directly</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bd-footer py-5 mt-5 bg-light">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-3 mb-3">
+                    <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="/">
+                        <span class="fs-5">Divy Srivastava</span>
+                    </a>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2">Designed and built by me with the help of <a href="https://getbootstrap.com/"
+                                target="_blank" rel="noopener"><b>Bootstrap 5 docs.</b></a></li>
+                        <li class="mb-2">Code licensed <a href="#" target="_blank" rel="license noopener"><b>MIT</b></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html">Home</a></li>
+                        <li class="mb-2"><a
+                                href="https://www.fiverr.com/divysrivasta887/buying?source=avatar_menu_profile"
+                                target="_blank">Fiverr</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 mb-3">
+                    <h5>Projects</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="gallery.html">Gallery</a></li>
+                        <li class="mb-2"><a href="https://github.com/PLTshubh?tab=repositories">More Projects</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 mb-3">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="hireme.html">Hire Me</a></li>
+                        <li class="mb-2"><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 mb-3">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="mailto:divysrivastava719@gmail.com">Email Me</a></li>
+                        <li class="mb-2"><a href="https://wa.me/+918887665422">WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <hr class="border-light" />
+    <div class="text-center pb-3">
+        <small>&copy; 2025 Divy Srivastava. All rights reserved.</small>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            const pricingPopup = document.createElement('div');
+            pricingPopup.className = 'popup';
+            pricingPopup.textContent = '👋 Don\'t forget to check the Pricing link in the footer!';
+            document.body.appendChild(pricingPopup);
+        }, 4000);
+
+        window.onload = function () {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('emailed') === 'true') {
+                const popup = document.createElement('div');
+                popup.className = 'popup';
+                popup.textContent = '✅ Thanks for reaching out! I\'ll get back to you soon.';
+                document.body.appendChild(popup);
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
